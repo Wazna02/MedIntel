@@ -1,0 +1,5 @@
+Flu: fever cough fatigue chills
+CommonCold: cough sneezing runny_nose
+Migraine: headache nausea sensitivity_light
+FoodPoisoning: nausea vomiting stomach_pain diarrhea
+COVID19: fever cough fatigue loss_taste loss_smell
