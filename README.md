@@ -1,5 +1,9 @@
 # MedIntel – AI + Computer Vision Medical Assistant
 
+This project is being developed as part of my preparation for Google Summer of Code (GSoC) 2026 under the OpenCV organization.
+
+It focuses on building a modular, real-world computer vision pipeline using OpenCV for medical image analysis.
+
 MedIntel is a **multimodal AI system** that combines:
 
 * Symptom-based disease prediction (C++)
@@ -32,26 +36,32 @@ to provide early-stage medical insights.
 
 ### 🔹 AI Classification
 
-* Image-based prediction (Normal / Abnormal)
-* Integrated with preprocessing pipeline
-* Lightweight ML model (scikit-learn)
+* Model: Logistic Regression / Support Vector Machine (SVM)
+* Input: Extracted feature vectors from processed images
+* Output: Binary classification (Normal / Abnormal)
 
 ---
 
 ## System Pipeline
 
 ```
-User Input (Symptoms / Image)
+Input (Symptoms / Medical Image)
             ↓
-   C++ Symptom Analyzer
-            ↓
-   OpenCV Image Processing
+   Preprocessing (OpenCV)
+   - Grayscale normalization
+   - Noise reduction
+   - Contrast enhancement
             ↓
    Feature Extraction
+   - Edge detection
+   - Contours
+   - Segmentation
             ↓
-      AI Prediction
+   Feature Vector Generation
             ↓
- Final Output (Ranked + Classified)
+   AI Classification (scikit-learn)
+            ↓
+ Final Output (Prediction + Ranking)
 ```
 
 ---
@@ -104,7 +114,7 @@ MedIntel/
 
 ---
 
-##How to Run
+## How to Run
 
 ### 1. Install dependencies
 
@@ -164,6 +174,16 @@ Windows (PowerShell):
 
 ---
 
+## Evaluation
+
+The system is evaluated using:
+
+- Classification accuracy
+- Precision and recall
+- Visual inspection of preprocessing results
+
+---
+
 ## Future Improvements (GSoC Direction)
 
 * Real medical datasets (skin disease, X-ray)
@@ -171,6 +191,24 @@ Windows (PowerShell):
 * Integration with OpenCV C++ backend
 * Web-based interface
 * API for healthcare tools
+
+---
+
+## Motivation
+
+Medical image analysis is often complex and inaccessible to beginners. While OpenCV provides powerful tools, there is a lack of structured, end-to-end pipelines demonstrating real-world applications.
+
+MedIntel aims to bridge this gap by providing a modular and beginner-friendly pipeline that connects image preprocessing, feature extraction, and AI-based analysis into a unified workflow.
+
+---
+
+## GSoC Goals
+
+- Improve modularity of the pipeline
+- Integrate real-world medical datasets
+- Enhance feature extraction techniques
+- Expand AI model performance
+- Contribute improvements back to the OpenCV ecosystem
 
 ---
 
