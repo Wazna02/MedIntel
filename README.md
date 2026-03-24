@@ -1,10 +1,12 @@
-# MedIntel
+# MedIntel – AI + Computer Vision Medical Assistant
 
-**AI Symptom Analyzer built with C++**
+MedIntel is a **multimodal AI system** that combines:
 
-MedIntel is a lightweight command-line medical symptom analyzer that compares user-entered symptoms with a disease dataset and predicts possible conditions based on symptom matching.
+* Symptom-based disease prediction (C++)
+* Medical image processing (OpenCV)
+* AI-based classification (Python)
 
-The system calculates **match percentages** and ranks diseases to suggest the most likely conditions.
+to provide early-stage medical insights.
 
 ⚠️ This project is for **educational purposes only** and is **not a medical diagnostic tool**.
 
@@ -12,67 +14,125 @@ The system calculates **match percentages** and ranks diseases to suggest the mo
 
 ## Features
 
-* Symptom input via command line
-* Dataset-based disease knowledge
-* Symptom matching algorithm
-* Percentage-based diagnosis scoring
-* Ranked list of possible conditions
-* Simple and lightweight C++ implementation
+### 🔹 C++ Symptom Analyzer
+
+* Command-line symptom input
+* Dataset-based disease prediction
+* Match percentage scoring
+* Ranked disease suggestions
+
+### 🔹 OpenCV Image Processing
+
+* Grayscale conversion
+* Noise reduction (Gaussian Blur)
+* Contrast enhancement
+* Edge detection
+* Image segmentation
+* Contour detection
+
+### 🔹 AI Classification
+
+* Image-based prediction (Normal / Abnormal)
+* Integrated with preprocessing pipeline
+* Lightweight ML model (scikit-learn)
+
+---
+
+## System Pipeline
+
+```
+User Input (Symptoms / Image)
+            ↓
+   C++ Symptom Analyzer
+            ↓
+   OpenCV Image Processing
+            ↓
+   Feature Extraction
+            ↓
+      AI Prediction
+            ↓
+ Final Output (Ranked + Classified)
+```
+
+---
+
+## Demo
+
+### Input
+
+![input](sample.jpg)
+
+### Processed Output
+
+![edges](edges.png)
+![contours](contours.png)
+
+### AI Result
+
+```
+AI Medical Analysis Result
+Prediction: Normal
+```
 
 ---
 
 ## Project Structure
 
 ```
-MedIntel
+MedIntel/
 │
-├── cpp_engine
-│   └── main.cpp          # Core analysis engine
+├── cpp_engine/
+│   └── main.cpp                # C++ symptom analysis engine
 │
-├── dataset
-│   └── diseases.txt      # Disease–symptom dataset
+├── src/
+│   └── advanced_image_processor.py   # OpenCV processing module
 │
-├── docs                  # Documentation (future)
+├── ai_model/
+│   └── predictor.py           # AI classification model
 │
-├── LICENSE
+├── dataset/
+│   └── diseases.txt
+│
+├── docs/
+│
+├── main.py                    # Python integration entry point
+├── sample.jpg                 # Test image
+├── edges.png                  # Output (generated)
+├── contours.png               # Output (generated)
 └── README.md
 ```
 
 ---
 
-## How It Works
+##How to Run
 
-1. The user enters symptoms in the terminal.
-2. The program loads disease data from the dataset.
-3. It compares user symptoms with disease symptoms.
-4. A **match percentage** is calculated.
-5. Diseases are **ranked from most likely to least likely**.
-
-Example logic:
+### 1. Install dependencies
 
 ```
-Match % = (matched symptoms / total disease symptoms) × 100
+pip install opencv-python matplotlib scikit-learn numpy
 ```
 
 ---
 
-## How to Run
+### 2. Run the system
 
-Navigate to the project folder:
+```
+python main.py
+```
+
+Enter image path:
+
+```
+sample.jpg
+```
+
+---
+
+### 🔹 3. Run C++ engine (optional)
 
 ```
 cd cpp_engine
-```
-
-Compile the program:
-
-```
 g++ -std=c++11 main.cpp -o medintel
-```
-
-Run the program:
-
-```
 ./medintel
 ```
 
@@ -84,62 +144,44 @@ Windows (PowerShell):
 
 ---
 
-## Example Usage
+## How It Works
 
-```
-Enter your symptoms (type 'done' to finish):
+### C++ Module
 
-> fatigue
-> cough
-> done
-```
+* Matches symptoms with dataset
+* Calculates percentage similarity
+* Ranks diseases
 
-Output:
+### OpenCV Module
 
-```
-Analyzing symptoms...
+* Enhances and processes images
+* Extracts key visual features
 
-Top Possible Conditions:
+### AI Module
 
-1. Flu (50.00% match)
-2. COVID19 (40.00% match)
-3. CommonCold (33.33% match)
-```
+* Uses processed image data
+* Predicts condition category
 
 ---
 
-## Dataset Example
+## Future Improvements (GSoC Direction)
 
-```
-Flu: fever cough fatigue chills
-CommonCold: cough sneezing runny_nose
-COVID19: fever cough fatigue loss_taste loss_smell
-```
-
----
-
-## Technologies Used
-
-* **C++**
-* Standard Library (STL)
-* File Handling
-* Vector & Algorithm Libraries
+* Real medical datasets (skin disease, X-ray)
+* Deep learning models (CNN)
+* Integration with OpenCV C++ backend
+* Web-based interface
+* API for healthcare tools
 
 ---
 
-## Future Improvements
+## Contribution
 
-* Larger medical dataset
-* Symptom suggestion system
-* Interactive diagnosis questions
-* GUI version of MedIntel
-* Machine learning–based predictions
+Contributions are welcome!
+Feel free to open issues or submit pull requests.
 
 ---
 
 ## Author
 
-Developed as a learning project in **C++ and AI system design**.
-
----
-
+Fathima Wazna
+AIU Student | AI + Healthcare Enthusiast
