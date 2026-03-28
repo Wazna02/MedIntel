@@ -1,8 +1,8 @@
 # MedIntel – AI + Computer Vision Medical Assistant
 
-This project is being developed as part of my preparation for Google Summer of Code (GSoC) 2026 under the OpenCV organization.
+This project is being developed as part of my preparation for Google Summer of Code (GSoC) 2026.
 
-It focuses on building a modular, real-world computer vision pipeline using OpenCV for medical image analysis.
+It focuses on building a modular, real-world computer vision pipeline for medical image analysis using OpenCV, combined with lightweight AI techniques.
 
 MedIntel is a **multimodal AI system** that combines:
 
@@ -13,6 +13,16 @@ MedIntel is a **multimodal AI system** that combines:
 to provide early-stage medical insights.
 
 ⚠️ This project is for **educational purposes only** and is **not a medical diagnostic tool**.
+
+---
+
+## Motivation
+
+Medical image analysis is often complex and inaccessible to beginners. While OpenCV provides powerful tools, there is a lack of structured, end-to-end pipelines demonstrating real-world applications.
+
+MedIntel aims to bridge this gap by providing a modular and beginner-friendly pipeline that connects image preprocessing, feature extraction, and AI-based analysis into a unified workflow.
+
+This project is designed to be modular and adaptable, making it suitable for extension into different domains and open-source ecosystems.
 
 ---
 
@@ -191,14 +201,6 @@ The system is evaluated using:
 * Integration with OpenCV C++ backend
 * Web-based interface
 * API for healthcare tools
-
----
-
-## Motivation
-
-Medical image analysis is often complex and inaccessible to beginners. While OpenCV provides powerful tools, there is a lack of structured, end-to-end pipelines demonstrating real-world applications.
-
-MedIntel aims to bridge this gap by providing a modular and beginner-friendly pipeline that connects image preprocessing, feature extraction, and AI-based analysis into a unified workflow.
 
 ---
 
